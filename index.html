@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!--This sets up the HTML for the styling from the CSS to set up the grid for
+    the X's and O's to live. It also has all the ID's for the CSS and JavaScript to grab-->
+    <div class="container" id="main">
+        <span id="turn">Begin</span>
+    
+        <div class="box" style="border-left: 0; border-top: 0" id="tile1"></div>
+        <div class="box" style="border-top: 0" id="tile2"></div>
+        <div class="box" style="border-top: 0; border-right: 0" id="tile3"></div>
+        <div class="box" style="border-left: 0" id="tile4"></div>
+        <div class="box" id="tile5"></div>
+        <div class="box" style="border-right: 0" id="tile6"></div>
+        <div class="box" style="border-left: 0; border-bottom: 0" id="tile7"></div>
+        <div class="box" style="border-bottom: 0" id="tile8"></div>
+        <div class="box" style="border-right: 0; border-bottom: 0" id="tile9"></div>
+    </div>
+    
+    <button class="btn btn-primary" id="replay">Reset</button>
+
+    <script src="node_modules/jquery/dist/jquery.js"></script>
+    <script src="index.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+</body>
+</html>
