@@ -1,8 +1,10 @@
 var turn, tiles, XO; 
-turn = document.getElementById("turn");
+winner = document.getElementById("winner")
 tiles = document.querySelectorAll("#main div");
 XO = 0;
 
+//Grabs the replay button in the HTML with the id
+//Creates an event listeners so when clicked it will execute the replay function
 document.getElementById('replay').addEventListener('click', replay);
 
 //The replay button will set up the game for play again which will clear the log
@@ -11,9 +13,9 @@ function replay() {
     for (var i = 0; i < tiles.length; i++) {
         tiles[i].classList.remove("win");
         tiles[i].innerHTML = "";
-        turn.innerHTML = "Begin";
-        console.clear()
-        XO = 0
+        winner.innerHTML = "Begin";
+        console.clear();
+        XO = 0;
     }
 }
 
@@ -23,8 +25,7 @@ function selectWinner(b1, b2, b3) {
     b1.classList.add("win");
     b2.classList.add("win");
     b3.classList.add("win");
-    turn.innerHTML = b1.innerHTML + " wins";
-    turn.style.fontSize = "40px";
+    winner.innerHTML = b1.innerHTML + " wins";
 }
 
 //The determine winner function grabs all the individual tiles and compares them based on the letter
@@ -75,17 +76,18 @@ for (var i = 0; i < tiles.length; i++) {
             if (XO % 2 === 0) {
                 console.log(XO);
                 this.innerHTML = "X";
-                turn.innerHTML = "O's Turn";
+                winner.innerHTML = "O's Turn";
                 determineWinner();
                 XO += 1;
             } else {
                 console.log(XO);
                 this.innerHTML = "O";
-                turn.innerHTML = "X's Turn Now";
+                winner.innerHTML = "X's Turn Now";
                 determineWinner();
                 XO += 1;
             } if (XO === 9) {
-                turn.innerHTML = "Game is draw";
+                winner.innerHTML = "Game is draw";
+                determineWinner();
             }
         }
     }
